@@ -1,0 +1,83 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$primary: mat-palette($mat-deep-purple, 500, 600, 700);
+$accent: mat-palette($mat-amber, 500, 600, 700);
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+mat-toolbar {
+    z-index: 100;
+    box-shadow: 0px 5px 15px gray;
+    .container {
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .header-right {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+}
+
+.content-container {
+    max-width: 1600px;
+    margin: 1vh auto;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.side-nav{
+    width: 320px;
+
+    mat-tree {
+        background-color: transparent;
+    }
+}
+
+.main-content {
+    width: 1280px;
+    padding: 1vh 0;
+}
+
+ /*
+   * TREE STYLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+   */
+.example-tree-invisible {
+    display: none;
+  }
+  
+  .example-tree ul,
+  .example-tree li {
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+  }
+  
+  /*
+   * This padding sets alignment of the nested nodes.
+   */
+  .example-tree .mat-nested-tree-node div[role=group] {
+    padding-left: 40px;
+  }
+  
+  /*
+   * Padding for leaf nodes.
+   * Leaf nodes need to have padding so as to align with other non-leaf nodes
+   * under the same parent.
+   */
+  .example-tree div[role=group] > .mat-tree-node {
+    padding-left: 40px;
+  }
+
+
+

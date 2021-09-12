@@ -1,0 +1,72 @@
+<mat-toolbar color="primary">
+    <div class="container">
+        <button mat-button aria-label="user-button with a menu">
+            <mat-icon>account_tree</mat-icon>
+            BAZA ZNANJA
+        </button>
+        <div class="header-right">
+            <button mat-button aria-label="user-button with a menu">
+                <mat-icon>account_circle</mat-icon> 
+                Account
+            </button>
+
+            <button mat-button [matMenuTriggerFor]="menu" aria-label="icon-button with a menu">
+                <mat-icon>menu</mat-icon>
+            </button>
+
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+                <mat-icon>dialpad</mat-icon>
+                <span>Redial</span>
+                </button>
+                <button mat-menu-item disabled>
+                <mat-icon>voicemail</mat-icon>
+                <span>Check voice mail</span>
+                </button>
+                <button mat-menu-item>
+                <mat-icon>notifications_off</mat-icon>
+                <span>Disable alerts</span>
+                </button>
+            </mat-menu>
+        </div>
+    </div>
+</mat-toolbar>
+
+<div class="content-container">
+    <div class="side-nav">
+        <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="example-tree">
+            <!-- This is the tree node template for leaf nodes -->
+            <!-- There is inline padding applied to this node using styles.
+                This padding value depends on the mat-icon-button width. -->
+            <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
+                {{node.name}}
+            </mat-tree-node>
+            <!-- This is the tree node template for expandable nodes -->
+            <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild">
+                <div class="mat-tree-node">
+                    <button mat-icon-button matTreeNodeToggle
+                            [attr.aria-label]="'Toggle ' + node.name">
+                    <mat-icon class="mat-icon-rtl-mirror">
+                        {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+                    </mat-icon>
+                    </button>
+                    {{node.name}}
+                </div>
+                <!-- There is inline padding applied to this div using styles.
+                    This padding value depends on the mat-icon-button width.  -->
+                <div [class.example-tree-invisible]="!treeControl.isExpanded(node)"
+                    role="group">
+                    <ng-container matTreeNodeOutlet></ng-container>
+                </div>
+            </mat-nested-tree-node>
+            </mat-tree>
+    </div>
+    <div class="main-content">
+        <h1>Main content</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ad fugit cupiditate nobis ullam molestias corrupti odit adipisci sed. Suscipit culpa maiores sequi nam tempora.</p>
+        <h2>Main content</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti minus voluptatum ratione saepe veniam assumenda harum! Ipsam similique nesciunt quam dignissimos facilis in consequatur deleniti eligendi aliquam illo perspiciatis repellendus veritatis, explicabo, possimus cum dicta voluptate laboriosam! Error, repellat cum quia aliquam eos, numquam incidunt aperiam ullam laborum perferendis est.</p>
+        <h3>Main content</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid dolores iure accusamus nostrum mollitia obcaecati quia ullam autem odio alias est tempore labore dolorum, molestias inventore, consequuntur, ratione amet porro quasi atque? Molestias, sit voluptatibus aliquid sapiente modi molestiae nulla, eos dolores tenetur quod nam qui voluptates fugiat tempora omnis voluptatem? Officia eum doloribus excepturi cum cupiditate saepe soluta! Ducimus officia iure voluptas reiciendis ex aut aliquam vero optio natus doloribus similique accusamus porro officiis libero quam eum, impedit eveniet dignissimos sunt tempora corporis ea? Fugiat qui et, consectetur quisquam ipsam expedita voluptas molestiae quaerat sit pariatur dolores provident. Minima ullam eveniet a voluptatum amet fuga sequi id eum eaque molestias dolores, quidem assumenda dicta voluptas quas impedit odit, cumque, culpa quos. Eveniet velit consectetur minus repudiandae veritatis perferendis suscipit dolorem, alias expedita atque a omnis totam distinctio nulla corrupti nam repellat dolorum necessitatibus amet. Beatae vitae exercitationem dolore sed labore ullam modi consequatur necessitatibus nostrum aspernatur, repellat consequuntur quos natus voluptatum ipsam! Tempore at aspernatur nesciunt sed ex voluptatibus quod cupiditate placeat sequi officia animi perferendis, ullam quam, architecto eligendi aliquid aut veritatis temporibus minus dolores? Excepturi, dolorem! Similique magni dolore dignissimos necessitatibus neque? Optio consequuntur deserunt recusandae modi.</p>
+    </div>
+</div>
