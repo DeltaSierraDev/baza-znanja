@@ -1,0 +1,42 @@
+mat-toolbar {
+    box-shadow: 0px 5px 10px gray;
+    position: fixed;
+    z-index: 100;
+}
+
+mat-toolbar-row {
+    max-width: 1640px;
+    margin: 0 auto;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.toolbar-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.toolbar-search {
+    border-bottom: 1px solid whitesmoke;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 6px 3px 6px 6px;
+}
+
+.toolbar-search:focus-within {
+    border-bottom: 2px solid whitesmoke;
+}
+
+.toolbar-search-input {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    color: whitesmoke;
+    font-size: .95em; 
+}
+

@@ -1,0 +1,49 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <!-- Left hand navbar -->
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span>{{ dataService.appName }}</span>
+        <span class="spacer"></span>
+      
+        <!-- Right hand navbar start -->
+        <div class="toolbar-right">
+
+            <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+                <mat-icon>add</mat-icon>
+            </button>
+
+            <!-- Search start -->
+            <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+                <mat-icon>search</mat-icon>
+            </button>
+            <form class="toolbar-search">
+                <input type="text" class="toolbar-search-input">
+                <mat-icon>close</mat-icon>
+            </form>
+            <!-- Search end -->
+
+            <!-- Menu start -->
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+                    <mat-icon>account_circle</mat-icon>
+                    <span>Account</span>
+                </button>
+                <button mat-menu-item disabled>
+                    <mat-icon>admin_panel_settings</mat-icon>
+                    <span>Admin mode</span>
+                </button>
+                <button mat-menu-item>
+                    <mat-icon>history</mat-icon>
+                    <span>Recent changes</span>
+                </button>
+            </mat-menu>
+            <!-- Menu end -->
+
+        </div>
+        <!-- Right hand navbar start -->
+    </mat-toolbar-row>
