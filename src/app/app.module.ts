@@ -33,6 +33,8 @@ import { NewDialogComponent } from './home/dialogs/new-dialog/new-dialog.compone
 import { EditDialogComponent } from './home/dialogs/edit-dialog/edit-dialog.component';
 import { HttpClientModule} from '@angular/common/http';
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import { AuthComponent } from './auth/auth.component';
+import { LoginComponent } from './auth/login/login.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,9 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
     ArrayListComponent,
     HashMapComponent,
     NewDialogComponent,
-    EditDialogComponent
+    EditDialogComponent,
+    AuthComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
