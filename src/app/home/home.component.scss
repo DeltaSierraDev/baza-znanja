@@ -8,9 +8,12 @@
 
     .sidebar {
         min-width: 320px;
+        position: sticky;
+        top: 50px
     }
 
     .content {
         padding: 12px 36px 12px 12px;
     }
 }
+

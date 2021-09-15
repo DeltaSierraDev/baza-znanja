@@ -11,7 +11,12 @@ export class HomeComponent implements OnInit {
 
 
   constructor(public dialog: MatDialog) {
-    this.dialog.open(LoginComponent);
+    this.dialog.open(LoginComponent, { 
+        disableClose: true, 
+        width: '320px',
+        height: '520px', 
+        backdropClass: 'backdropBackground'
+      });
   }
 
   ngOnInit(): void {
