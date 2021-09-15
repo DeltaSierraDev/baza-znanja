@@ -1,7 +1,18 @@
-p {
-    text-align: justify;    
-}
 
-h1, h2, h3 {
-    border-bottom: 1px solid gray;
+
+.example-card {
+    max-width: 240px;
+    margin: 16px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+
+.news-cards {
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+    justify-content: center;
 }

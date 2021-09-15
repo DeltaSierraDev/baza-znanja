@@ -1,0 +1,14 @@
+mat-dialog-content,h2 {
+    width: 60vw;
+}
+
+
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .long-field {
+        width: 400px;
+    }
+}

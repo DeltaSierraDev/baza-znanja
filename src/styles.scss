@@ -15,3 +15,22 @@ $accent: mat-palette($mat-amber, 500, 600, 700);
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+p {
+  text-align: justify;    
+}
+
+h1, h2, h3 {
+  border-bottom: 1px solid gray;
+}
+
+.selection {
+  display: flex;
+  flex-direction: column;
+
+  mat-checkbox {
+      margin-bottom: 6px;
+  }
+}
+

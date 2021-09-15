@@ -1,28 +1,47 @@
 <mat-toolbar color="primary">
     <mat-toolbar-row>
         <!-- Left hand navbar -->
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <button mat-icon-button [matMenuTriggerFor]="menu2" >
             <mat-icon>menu</mat-icon>
         </button>
-        <span>{{ dataService.appName }}</span>
+        <mat-menu #menu2="matMenu">
+            <button mat-menu-item disabled routerLink="/dashboard">
+                <mat-icon>space_dashboard</mat-icon>
+                <span>Dashboard</span>
+            </button>
+            <button mat-menu-item disabled routerLink="/dashboard">
+                <mat-icon>inbox</mat-icon>
+                <span>Sandbox</span>
+            </button>
+            <button mat-menu-item routerLink="/">
+                <mat-icon>wifi_tethering</mat-icon>
+                <span>Knowlage Database</span>
+            </button>
+        </mat-menu>
+
+        <span routerLink="/" class="navbar-brand-text">{{ dataService.appName }}</span>
         <span class="spacer"></span>
       
         <!-- Right hand navbar start -->
         <div class="toolbar-right">
 
-            <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-                <mat-icon>add</mat-icon>
-            </button>
-
             <!-- Search start -->
-            <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-                <mat-icon>search</mat-icon>
-            </button>
-            <form class="toolbar-search">
+            <form class="toolbar-search" *ngIf="searchExpand">
                 <input type="text" class="toolbar-search-input">
                 <mat-icon>close</mat-icon>
             </form>
+            <button mat-icon-button (click)="expandSearch()">
+                <mat-icon>search</mat-icon>
+            </button>
             <!-- Search end -->
+
+            <button mat-icon-button (click)="openEditDialog()">
+                <mat-icon>edit</mat-icon>
+            </button>
+
+            <button mat-icon-button (click)="openNewDialog()">
+                <mat-icon>add</mat-icon>
+            </button>
 
             <!-- Menu start -->
             <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu icon-button with a menu">
@@ -43,7 +62,6 @@
                 </button>
             </mat-menu>
             <!-- Menu end -->
-
         </div>
         <!-- Right hand navbar start -->
     </mat-toolbar-row>
